@@ -3,7 +3,11 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'cloud-wind': "url('/assets/cloud-wind.png')",
+      }
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

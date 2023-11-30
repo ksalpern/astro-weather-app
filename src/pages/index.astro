@@ -1,7 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
 ---
+
 <Layout title="Weather Chernivtsi">
-		<h1 class="text-purple-400">Weather widget</h1>
+  <main class="flex flex-col gap-8 mx-3 my-8">
+    <div class="bg-[#5936B4] flex p-4 rounded-lg">
+      <div class="container mx-auto py-8">
+        <p class="text-6xl mb-6">19°</p>
+        <h2 class="text-xl">Chernivtsi, Ukraine</h2>
+      </div>
+      <div class="flex flex-col items-end">
+        <div class="w-40 h-40 bg-cloud-wind bg-no-repeat bg-center bg-contain">
+        </div>
+        <p class="text-sm">Fast Wind</p>
+      </div>
+    </div>
+  </main>
 </Layout>
