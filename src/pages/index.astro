@@ -1,19 +1,18 @@
 ---
+import Widget from "../components/Widget";
 import Layout from "../layouts/Layout.astro";
+
+const response = await fetch(
+  `https://api.openweathermap.org/data/2.5/weather?lat=49.55231884565186&lon=25.61109140510275&appid=${import.meta.env.API_KEY}`
+);
+// const response = await fetch(
+//   `https://api.openweathermap.org/data/2.5/weather?lat=${import.meta.env.LOCATION_LAT}&lon=${import.meta.env.LOCATION_LON}&appid=${import.meta.env.API_KEY}`
+// );
+const weather = await response.json();
 ---
 
 <Layout title="Weather Chernivtsi">
   <main class="flex flex-col gap-8 mx-3 my-8">
-    <div class="bg-[#5936B4] flex p-4 rounded-lg">
-      <div class="container mx-auto py-8">
-        <p class="text-6xl mb-6">19°</p>
-        <h2 class="text-xl">Chernivtsi, Ukraine</h2>
-      </div>
-      <div class="flex flex-col items-end">
-        <div class="w-40 h-40 bg-cloud-wind bg-no-repeat bg-center bg-contain">
-        </div>
-        <p class="text-sm">Fast Wind</p>
-      </div>
-    </div>
+    <Widget weather={weather} />
   </main>
 </Layout>
